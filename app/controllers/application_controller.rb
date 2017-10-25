@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  # Find user in db if found, redirect to account page, else error page
+  # Find user in db by id, if found, redirect to account page, else error page
   post '/login' do
     if @user = User.find_by(params)
       session[:user_id] = @user.id
