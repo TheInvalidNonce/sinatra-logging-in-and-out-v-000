@@ -22,6 +22,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  # Find @current_user by user_id, if so, display account, else error page
   get '/account' do
     @current_user = User.find_by(session[:user_id])
     if @current_user
